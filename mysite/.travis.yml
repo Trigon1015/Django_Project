@@ -5,9 +5,9 @@ install: skip
 deploy:
   provider: elasticbeanstalk
   access_key_id: 
-    secure: AKIA4IGE7SGWJ2RV23OX
+    secure: AKIA4IGE7SGWKKQ6QQ23
   secret_access_key: 
-    secure: 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
+    secure: 8NUacii3Z0oOFKvduOZXCpW3rFDOMPwabwaUu8qt
   region: "us-west-2"
   app: "Django-App"
   env: "Django-tutorial-env-1"
