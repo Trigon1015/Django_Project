@@ -7,7 +7,7 @@ deploy:
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
   region: "us-west-2"
-  app: "Django-App"
+  app: "django-tutorial"
   env: "Django-tutorial-env-1"
   bucket_name: "elasticbeanstalk-us-west-2-842226700716"
   on:
