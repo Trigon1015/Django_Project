@@ -1,21 +1,18 @@
 dist: focal
 language: python
 
-# Install dependencies including Django, coverage, and coveralls
+# Install dependencies from requirements.txt, including Django, coverage, and other tools
 install:
-  - pip install -r requirements.txt  # Install dependencies from requirements.txt
-  - pip install black flake8 coverage coveralls  # Install additional tools
+  - pip install -r requirements.txt  # Install project dependencies
 
 # Run the code checks and tests with coverage
 script:
   - black --check .
   - flake8
-  - cd mysite  # Change to the directory where manage.py is located
   - coverage run --source='.' manage.py test  # Run tests with coverage
 
 # After successful tests, send coverage data to Coveralls
 after_success:
-  - cd ..
   - coveralls  # Upload the coverage data to Coveralls
 
 # Deploy configuration (if needed)
@@ -29,3 +26,4 @@ deploy:
   bucket_name: "elasticbeanstalk-us-west-2-842226700716"
   on:
     branch: main
+
