@@ -4,7 +4,8 @@ language: python
 # Install dependencies by navigating into the directory where requirements.txt is located
 install:
   - cd mysite  # Change directory to where manage.py and requirements.txt are
-  - pip install -r requirements.txt  # Install dependencies
+  - pip install -r requirements.txt  # Install dependencies from requirements.txt
+  - pip install black flake8 coverage coveralls 
 
 # Run the code checks and tests with coverage from within the mysite directory
 script:
