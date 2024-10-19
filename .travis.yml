@@ -1,11 +1,12 @@
 dist: focal
 language: python
 
-# Install dependencies from requirements.txt, including Django, coverage, and other tools
+# Install dependencies by navigating into the directory where requirements.txt is located
 install:
-  - pip install -r requirements.txt  # Install project dependencies
+  - cd mysite  # Change directory to where manage.py and requirements.txt are
+  - pip install -r requirements.txt  # Install dependencies
 
-# Run the code checks and tests with coverage
+# Run the code checks and tests with coverage from within the mysite directory
 script:
   - black --check .
   - flake8
@@ -15,7 +16,7 @@ script:
 after_success:
   - coveralls  # Upload the coverage data to Coveralls
 
-# Deploy configuration (if needed)
+# Optional: Deploy configuration if using Elastic Beanstalk
 deploy:
   provider: elasticbeanstalk
   access_key_id: $AWS_ACCESS_KEYdjango
@@ -26,4 +27,5 @@ deploy:
   bucket_name: "elasticbeanstalk-us-west-2-842226700716"
   on:
     branch: main
+
 
