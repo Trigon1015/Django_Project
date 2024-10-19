@@ -6,15 +6,17 @@ install:
   - pip install black flake8
   - pip install coverage coveralls  # Install coverage and coveralls
 
-# Run the code checks and tests with coverage
+# Change directory to where manage.py is located before running tests
 script:
   - black --check .
   - flake8
+  - cd mysite  # Change to the directory where manage.py is located
   - coverage run --source='.' manage.py test  # Run tests with coverage
 
 # After successful tests, send coverage data to Coveralls
 after_success:
-  - coveralls
+  - cd ..
+  - coveralls  # Upload the coverage data to Coveralls
 
 # Deploy configuration (if needed)
 deploy:
