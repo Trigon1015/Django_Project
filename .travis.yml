@@ -1,7 +1,15 @@
 dist: focal
 language: python
-script: echo "Travis is cool!" 
-install: skip
+
+# Install the necessary dependencies
+install:
+  - pip install black
+
+# Script to run the black check
+script:
+  - black --check .
+  - echo "Travis is cool!"
+
 deploy:
   provider: elasticbeanstalk
   access_key_id: $AWS_ACCESS_KEYdjango
