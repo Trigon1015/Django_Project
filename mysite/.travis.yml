@@ -11,6 +11,6 @@ deploy:
   region: "us-west-2"
   app: "Django-App"
   env: "Django-tutorial-env-1"
-  bucket_name: "the-target-S3-bucket"
+  bucket_name: "elasticbeanstalk-us-west-2-842226700716"
   on:
     branch: main
