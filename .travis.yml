@@ -1,14 +1,12 @@
 dist: focal
 language: python
 
-# Install the necessary dependencies
 install:
-  - pip install black
+  - pip install black flake8
 
-# Script to run the black check
 script:
   - black --check .
-  - echo "Travis is cool!"
+  - flake8
 
 deploy:
   provider: elasticbeanstalk
@@ -20,3 +18,4 @@ deploy:
   bucket_name: "elasticbeanstalk-us-west-2-842226700716"
   on:
     branch: main
+
