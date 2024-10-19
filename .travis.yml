@@ -1,12 +1,12 @@
 dist: focal
 language: python
 
-# Install dependencies including coverage and coveralls
+# Install dependencies including Django, coverage, and coveralls
 install:
-  - pip install black flake8
-  - pip install coverage coveralls  # Install coverage and coveralls
+  - pip install -r requirements.txt  # Install dependencies from requirements.txt
+  - pip install black flake8 coverage coveralls  # Install additional tools
 
-# Change directory to where manage.py is located before running tests
+# Run the code checks and tests with coverage
 script:
   - black --check .
   - flake8
