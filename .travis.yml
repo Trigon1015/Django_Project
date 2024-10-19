@@ -1,13 +1,22 @@
 dist: focal
 language: python
 
+# Install dependencies including coverage and coveralls
 install:
   - pip install black flake8
+  - pip install coverage coveralls  # Install coverage and coveralls
 
+# Run the code checks and tests with coverage
 script:
   - black --check .
   - flake8
+  - coverage run --source='.' manage.py test  # Run tests with coverage
 
+# After successful tests, send coverage data to Coveralls
+after_success:
+  - coveralls
+
+# Deploy configuration (if needed)
 deploy:
   provider: elasticbeanstalk
   access_key_id: $AWS_ACCESS_KEYdjango
@@ -18,4 +27,3 @@ deploy:
   bucket_name: "elasticbeanstalk-us-west-2-842226700716"
   on:
     branch: main
-
