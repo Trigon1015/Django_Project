@@ -4,10 +4,8 @@ script: echo "Travis is cool!"
 install: skip
 deploy:
   provider: elasticbeanstalk
-  access_key_id: 
-    secure: $AWS_ACCESS_KEY
-  secret_access_key: 
-    secure: $AWS_SECRET_KEY
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
   region: "us-west-2"
   app: "Django-App"
   env: "Django-tutorial-env-1"
