@@ -1,6 +1,9 @@
 dist: focal
 language: python
 
+python:
+  - "3.11"  
+
 # Install dependencies by navigating into the directory where requirements.txt is located
 install:
   - cd mysite  # Change directory to where manage.py and requirements.txt are
