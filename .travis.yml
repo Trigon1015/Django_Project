@@ -17,7 +17,7 @@ script:
   - coverage run --source='.' manage.py test  # Run tests with coverage
 
 # After successful tests, send coverage data to Coveralls
-after_success:
+after_script:
   - coveralls  # Upload the coverage data to Coveralls
 
 # Optional: Deploy configuration if using Elastic Beanstalk
