@@ -10,3 +10,10 @@ This is a Django project.
 This is the live app:
 http://django-tutorial-env-1.eba-tw6ayrfp.us-west-2.elasticbeanstalk.com/polls/
 
+Travis repo:
+https://travis-ci.com/github/Trigon1015/Django_Project
+
+github link:
+https://github.com/Trigon1015/Django_Project
+
+
